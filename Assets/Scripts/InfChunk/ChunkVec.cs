@@ -10,19 +10,19 @@ namespace InfChunk
         /// <summary>
         /// The x-axis value.
         /// </summary>
-        public BigInteger x;
+        public BigInteger X { get; set; }
         /// <summary>
         /// The y-axis value.
         /// </summary>
-        public BigInteger y;
+        public BigInteger Y { get; set; }
         /// <summary>
         /// The z-axis value.
         /// </summary>
-        public BigInteger z;
+        public BigInteger Z { get; set; }
         /// <summary>
         /// The dimension value.
         /// </summary>
-        public BigInteger d;
+        public BigInteger D { get; set; }
         
         /// <summary>
         /// Plain constructor initializing all values.
@@ -33,10 +33,10 @@ namespace InfChunk
         /// <param name="d">The dimension value.</param>
         public ChunkVec(BigInteger x, BigInteger y, BigInteger z, BigInteger d)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.d = d;
+            X = x;
+            Y = y;
+            Z = z;
+            D = d;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace InfChunk
         /// <returns>The squared magnitude of this vector.</returns>
         public BigInteger GetSquaredMagnitude()
         {
-            return x * x + y * y + z * z + d * d;
+            return X * X + Y * Y + Z * Z + D * D;
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace InfChunk
         /// <returns>The result chunk vector.</returns>
         public static ChunkVec operator+(ChunkVec left, ChunkVec right)
         {
-            return new ChunkVec(left.x + right.x, left.y + right.y, left.z + right.z, left.d + right.d);
+            return new ChunkVec(left.X + right.X, left.Y + right.Y, left.Z + right.Z, left.D + right.D);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace InfChunk
         /// <returns>The result chunk vector.</returns>
         public static ChunkVec operator-(ChunkVec left, ChunkVec right)
         {
-            return new ChunkVec(left.x - right.x, left.y - right.y, left.z - right.z, left.d - right.d);
+            return new ChunkVec(left.X - right.X, left.Y - right.Y, left.Z - right.Z, left.D - right.D);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace InfChunk
         /// <returns>The result chunk vector.</returns>
         public static ChunkVec operator*(ChunkVec left, BigInteger right)
         {
-            return new ChunkVec(left.x * right, left.y * right, left.z * right, left.d * right);
+            return new ChunkVec(left.X * right, left.Y * right, left.Z * right, left.D * right);
         }
 
         /// <summary>
