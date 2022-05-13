@@ -48,5 +48,49 @@ namespace InfChunk
             return x * x + y * y + z * z + d * d;
         }
 
+        /// <summary>
+        /// Plain addition, add each axis value alone.
+        /// </summary>
+        /// <param name="left">Chunk vector A.</param>
+        /// <param name="right">Chunk vector B.</param>
+        /// <returns>The result chunk vector.</returns>
+        public static ChunkVec operator+(ChunkVec left, ChunkVec right)
+        {
+            return new ChunkVec(left.x + right.x, left.y + right.y, left.z + right.z, left.d + right.d);
+        }
+
+        /// <summary>
+        /// Plain subtraction, subtract each axis value alone.
+        /// </summary>
+        /// <param name="left">Chunk vector A.</param>
+        /// <param name="right">Chunk vector B.</param>
+        /// <returns>The result chunk vector.</returns>
+        public static ChunkVec operator-(ChunkVec left, ChunkVec right)
+        {
+            return new ChunkVec(left.x - right.x, left.y - right.y, left.z - right.z, left.d - right.d);
+        }
+
+        /// <summary>
+        /// Plain multiply, multiply a number with each axis value alone.
+        /// </summary>
+        /// <param name="left">The vector.</param>
+        /// <param name="right">The number.</param>
+        /// <returns>The result chunk vector.</returns>
+        public static ChunkVec operator*(ChunkVec left, BigInteger right)
+        {
+            return new ChunkVec(left.x * right, left.y * right, left.z * right, left.d * right);
+        }
+
+        /// <summary>
+        /// Plain multiply, multiply a number with each axis value alone.
+        /// </summary>
+        /// <param name="left">The number.</param>
+        /// <param name="right">The vector.</param>
+        /// <returns>The result chunk vector.</returns>
+        public static ChunkVec operator*(BigInteger left, ChunkVec right)
+        {
+            return right * left;
+        }
+
     }
 }
