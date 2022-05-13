@@ -91,6 +91,5 @@ namespace InfChunk
         {
             return right * left;
         }
-
     }
 }
