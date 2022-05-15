@@ -1,4 +1,4 @@
-namespace InfChunk
+namespace InfChunk.Interface
 {
     /// <summary>
     /// An interface provides saving to bytes and loading from bytes operations.
@@ -10,6 +10,7 @@ namespace InfChunk
         /// </summary>
         /// <param name="data">The data.</param>
         void SaveData(out byte[] data);
+
         /// <summary>
         /// Load the data from bytes.
         /// </summary>
